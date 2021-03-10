@@ -1,13 +1,12 @@
 import React from "react";
 
-function NoteViewer({note, onEditClick, onDeleteClick}) {
-  // Why is there a delay between the click? 
+function NoteViewer({note, handleEditClick, handleDeleteClick}) {
   return (
     <>
       <h2>{note.title}</h2>
       <p>{note.body}</p>
-      <button onClick={onEditClick}>Edit</button>
-      <button onClick={onDeleteClick}>Delete</button>
+      <button onClick={handleEditClick}>Edit</button>
+      <button onClick={handleDeleteClick}>Delete</button>
     </>
   );
 }

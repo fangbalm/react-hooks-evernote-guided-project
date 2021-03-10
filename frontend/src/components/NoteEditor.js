@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function NoteEditor({note, showEditForm, onCancelClick, handleEditNote}) {
+function NoteEditor({note, showEditForm, handleCancelClick, handleEditNote}) {
   const [newNoteTitle, setNewNoteTitle] = useState(note.title)
   const [newNoteBody, setNewNoteBody] = useState(note.body)
 
@@ -35,7 +35,7 @@ function NoteEditor({note, showEditForm, onCancelClick, handleEditNote}) {
       <textarea name="body" placeholder="Tell me your deepest thoughts..." onChange={handleEditBody} value={newNoteBody}/>
       <div className="button-row">
         <input className="button" type="submit" value="Save" />
-        <button type="button" onClick={onCancelClick}>Cancel</button>
+        <button type="button" onClick={handleCancelClick}>Cancel</button>
       </div>
     </form>
   );

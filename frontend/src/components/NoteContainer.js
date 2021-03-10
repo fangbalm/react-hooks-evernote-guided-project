@@ -52,9 +52,6 @@ function NoteContainer() {
       })
       .then(res => res.json())
       .then(handleNewNote)
-      // .then(newNote => setNotes([...notes, newNote]))
-      // .then(setNoteContent(newNote))
-      // .then(newNoteView)
   }
 
   function handleNewNote(newNote){
@@ -70,11 +67,7 @@ function NoteContainer() {
   }
 
   const lowerCaseSearch = searchTerm.toLowerCase();
-
   const filteredNotes = notes.filter(note => note.title.toLowerCase().includes(lowerCaseSearch))
-
-
-  // const filteredNotes = notes.filter(note => note.title.includes(searchTerm))
 
   // function to set the state for the edit toggle - NOT the same as the actual boolean (showEditForm)
   function handleEditClick(){
@@ -101,8 +94,8 @@ function NoteContainer() {
     <>
       <Search onSearchChange={handleSearchChange} searchTerm={searchTerm}/>
       <div className="container">
-        <Sidebar notes={filteredNotes} onSelectNote={handleSelectedNote} onAddNote={handleAddNote}/>
-        <Content note={noteContent} showSelectedNote={showSelectedNote} onEditClick={handleEditClick} showEditForm={showEditForm} onCancelClick={handleCancelClick} handleEditNote={handleEditNote} onDeleteClick={handleDeleteClick} deleteClicked={deleteClicked}/>
+        <Sidebar notes={filteredNotes} handleSelectedNote={handleSelectedNote} handleAddNote={handleAddNote}/>
+        <Content note={noteContent} showSelectedNote={showSelectedNote} handleEditClick={handleEditClick} showEditForm={showEditForm} handleCancelClick={handleCancelClick} handleEditNote={handleEditNote} handleDeleteClick={handleDeleteClick} deleteClicked={deleteClicked}/>
       </div>
     </>
   );
