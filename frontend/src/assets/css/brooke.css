@@ -14,7 +14,6 @@ body {
   padding: 0;
 }
 
-
 /* Styles */
 h2, input[name="title"], textarea {
   font-family: 'IBM Plex Mono'
@@ -65,8 +64,9 @@ p.instructions {
 .filter {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  width: 26%;
+  /* justify-content: center;
+  align-items: center; */
   border: 2px dashed grey;
 }
 
@@ -125,6 +125,7 @@ div.sidebar ul li:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  overflow: scroll;
 }
 
 .master-detail-element {
@@ -132,6 +133,10 @@ div.sidebar ul li:hover {
   margin: 10px 0px;
   padding: 20px;
   border: 2px dashed grey;
+}
+
+.master-detail-element button {
+  margin-bottom: 10px;
 }
 
 .sidebar {

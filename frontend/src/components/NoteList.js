@@ -1,11 +1,13 @@
 import React from "react";
 import NoteItem from "./NoteItem";
 
-function NoteList() {
+function NoteList({notes, onSelectNote }) {
+  const notesComponents = notes.map((note) => {
+    return <NoteItem key={note.id} note={note} onSelectNote={onSelectNote}/>
+  })
   return (
     <ul>
-      {/* Render list of notes here... */}
-      <NoteItem />
+      {notesComponents}
     </ul>
   );
 }
